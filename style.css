@@ -1,0 +1,131 @@
+:root {
+  --primaryDarkCyan: hsl(158, 36%, 37%);
+  --primaryCream: hsl(30, 38%, 92%);
+  --neutralDarkBlue: hsl(212, 21%, 14%);
+  --nuetralGrayishBlue: hsl(228, 12%, 48%);
+  --neutralWhite: hsl(0, 0%, 100%);
+}
+@import url('https://fonts.google.com/specimen/Montserrat');
+@import url('https://fonts.google.com/specimen/Fraunces');
+
+body {
+  background-color: var(--primaryCream);
+
+  font-family: system-ui;
+}
+
+.container {
+  /*center the container with flexbox*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.item-1 {
+  width: 50%;
+  height: 450px;
+
+  background-image: url('./images/image-product-desktop.jpg');
+  background-position: center;
+  background-size: cover;
+
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.item-2 {
+  width: 50%;
+
+  margin-left: 20px;
+}
+.box {
+  width: 600px;
+  /*Remember that body is not white;this makes the card stand out*/
+  background-color: var(--neutralWhite);
+  display: flex;
+  /*Rounded corners at specific locations*/
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.text-container {
+  display: flex;
+  align-items: center;
+  width: 70%;
+}
+
+h4 {
+  letter-spacing: 7px;
+  color: var(--nuetralGrayishBlue);
+}
+
+p {
+  color: var(--nuetralGrayishBlue);
+  line-height: 25px;
+}
+
+#big-text {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+
+  color: var(--primaryDarkCyan);
+}
+
+#small-text {
+  color: var(--nuetralGrayishBlue);
+  text-decoration: line-through;
+}
+button {
+  padding: 15px 20px;
+  /*stripping away browser defaults*/
+  border: none;
+  outline: none;
+  color: var(--neutralWhite);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primaryDarkCyan);
+
+  width: 80%;
+  /*Rounded Corners*/
+  border-radius: 10px;
+}
+
+button img {
+  padding-right: 10px;
+}
+
+@media (max-width: 600px) {
+  .box {
+    flex-direction: column;
+
+    height: 600px;
+  }
+  .item-2 {
+    width: 80%;
+  }
+  button {
+    margin: 10px;
+  }
+  .item-1 {
+    /*change the product image*/
+    background-image: url('./images/image-product-mobile.jpg');
+    background-position: center;
+    background-size: cover;
+
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    width: 100%;
+    height: 300px;
+  }
+
+  br {
+    display: none;
+  }
+  #big-text {
+    margin-bottom: 10px;
+  }
+}
